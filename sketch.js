@@ -24,7 +24,8 @@ let maxC = 765;
 let inc = 0.01;
 let rad = 50;
 let rst = Math.round(rad / inc);
-let prt = Math.round(rst * 0.99)
+let prt = Math.round(rst * 0.99);
+let j = 5;
 
 function draw() {
     if (I == 0) {
@@ -39,8 +40,8 @@ function draw() {
     // if(I == rst){
     //     J = 1;
     // }
-    if(I == rst){
-  //      saveCanvas('living.color', 'png');
+    if (I == rst) {
+             saveCanvas('living.color', 'png');
     }
     if (I > rst * 2) {
         I = 0;
@@ -50,6 +51,7 @@ function draw() {
     } else {
         J += inc;
     }
+    // j = J / 1;
     I++;
     for (let i = 0; i < 1000; i++) {
         rangeX = random(-range, range);
@@ -74,9 +76,9 @@ function draw() {
         strokeWeight(rad / J);
         // stroke(C[0], C[1], C[2], map(T, 0, 765, 255, 128));
         stroke(
-            round(map(C[0], minC, maxC / 3, 0, 255)),
-            round(map(C[1], minC, maxC / 3, 0, 255)),
-            round(map(C[2], minC, maxC / 3, 0, 255))
+            round(map(C[0] + random(-j, j), minC, maxC / 3, 0, 255)),
+            round(map(C[1] + random(-j, j), minC, maxC / 3, 0, 255)),
+            round(map(C[2] + random(-j, j), minC, maxC / 3, 0, 255))
         );
         point(X + 0, Y + 0);
     }
