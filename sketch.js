@@ -1,6 +1,6 @@
 let canvas, img, X, Y, rangeX, rangeY, C, T;
-const H = window.innerHeight;
-const W = H * (4 / 3);
+const W = window.innerWidth;
+const H = W * (3 / 4);
 const W2 = W / 2;
 const H2 = H / 2;
 const range = Math.min(W, H);
@@ -24,7 +24,7 @@ let inc = 0.01;
 let rad = 50;
 let rst = Math.round(rad / inc);
 let prt = Math.round(rst * 0.99);
-let j = 3;
+let j = 1;
 
 function draw() {
     if (I == 0) {
