@@ -10,6 +10,7 @@ function preload() {
 }
 
 function setup() {
+    // pixelDensity(1);
     image(img, 0, 0);
     canvas = createCanvas(W, H);
     X = random(0, width);
@@ -23,23 +24,27 @@ let maxC = 765;
 let inc = 0.01;
 let rad = 50;
 let rst = Math.round(rad / inc);
-let prt = Math.round(rst * 0.99);
+let prt = false;
 let j = 1;
+let K = 0;
 
 function draw() {
     if (I == 0) {
         image(img, 0, 0, W, H);
     }
-    if (I == rst) {
-    //    saveCanvas('living.color', 'png');
+    if (I == rst && prt) {
+        saveCanvas('living.color', 'jpg');
     }
     if (I > rst * 2) {
         I = 0;
         J = 1;
+        K = 0;
     } else if (I > rst) {
         J -= inc;
+        K -= 0.001;
     } else {
         J += inc;
+        K += 0.001;
     }
     I++;
     for (let i = 0; i < 1000; i++) {
@@ -60,14 +65,14 @@ function draw() {
 
         strokeWeight(rad / J + random(0, j));
         stroke(
-            round(map(C[0] + random(-j, j), minC, maxC / 3, 0, 255)),
-            round(map(C[1] + random(-j, j), minC, maxC / 3, 0, 255)),
-            round(map(C[2] + random(-j, j), minC, maxC / 3, 0, 255))
+            round(map(C[0] + random(-j - K, j + K), minC, maxC / 3, 0, 255)),
+            round(map(C[1] + random(-j - K, j + K), minC, maxC / 3, 0, 255)),
+            round(map(C[2] + random(-j - K, j + K), minC, maxC / 3, 0, 255))
         );
         point(X + 0, Y + 0);
     }
 }
 
 function mouseReleased() {
-    saveCanvas('living.color', 'png');
+    saveCanvas('living.color', 'jpg');
 }
