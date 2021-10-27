@@ -77,9 +77,9 @@ function draw() {
 
         strokeWeight(rad / J + random(0, j));
         stroke(
-            round(map(C[0] + random(-j - K, j + K), minR-5, maxR+5, 0, 255)),
-            round(map(C[1] + random(-j - K, j + K), minG-5, maxG+5, 0, 255)),
-            round(map(C[2] + random(-j - K, j + K), minB-5, maxB+5, 0, 255)),
+            round(map(C[0] + random(-j - K, j + K), minR-2, maxR+2, 0, 255)),
+            round(map(C[1] + random(-j - K, j + K), minG-2, maxG+2, 0, 255)),
+            round(map(C[2] + random(-j - K, j + K), minB-2, maxB+2, 0, 255)),
             //round(map(L, 0, rst / rad, 0, 255))
         );
         point(X + 0, Y + 0);
