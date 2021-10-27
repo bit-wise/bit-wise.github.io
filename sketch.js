@@ -67,7 +67,7 @@ function draw() {
         if (Y < 0) { Y = height + Y; }
 
         C = get(X, Y);
-        T = C[0] + C[1] + C[2];
+        //T = C[0] + C[1] + C[2];
         minR = min(C[0], minR + 0.0001);
         maxR = max(C[0], maxR - 0.0001);
         minG = min(C[1], minG + 0.0001);
@@ -80,7 +80,7 @@ function draw() {
             round(map(C[0] + random(-j - K, j + K), minR-5, maxR+5, 0, 255)),
             round(map(C[1] + random(-j - K, j + K), minG-5, maxG+5, 0, 255)),
             round(map(C[2] + random(-j - K, j + K), minB-5, maxB+5, 0, 255)),
-            round(map(L, 0, rst / rad, 0, 255))
+            //round(map(L, 0, rst / rad, 0, 255))
         );
         point(X + 0, Y + 0);
     }
