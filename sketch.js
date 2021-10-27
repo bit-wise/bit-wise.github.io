@@ -6,7 +6,7 @@ const H2 = H / 2;
 const range = Math.min(W, H);
 
 function preload() {
-    img = loadImage('sample4.jpg');
+    img = loadImage('sample3.jpg');
 }
 
 function setup() {
