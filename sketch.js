@@ -32,6 +32,8 @@ let prt = false;
 let j = 1;
 let K = 0;
 let L = 0;
+let D = 0.0005
+let O = 2;
 
 function draw() {
     if (I == 0) {
@@ -68,18 +70,18 @@ function draw() {
 
         C = get(X, Y);
         //T = C[0] + C[1] + C[2];
-        minR = min(C[0], minR + 0.0001);
-        maxR = max(C[0], maxR - 0.0001);
-        minG = min(C[1], minG + 0.0001);
-        maxG = max(C[1], maxG - 0.0001);
-        minB = min(C[2], minB + 0.0001);
-        maxB = max(C[2], maxB - 0.0001);
+        minR = min(C[0], minR + D);
+        maxR = max(C[0], maxR - D);
+        minG = min(C[1], minG + D);
+        maxG = max(C[1], maxG - D);
+        minB = min(C[2], minB + D);
+        maxB = max(C[2], maxB - D);
 
         strokeWeight(rad / J + random(0, j));
         stroke(
-            round(map(C[0] + random(-j - K, j + K), minR-2, maxR+2, 0, 255)),
-            round(map(C[1] + random(-j - K, j + K), minG-2, maxG+2, 0, 255)),
-            round(map(C[2] + random(-j - K, j + K), minB-2, maxB+2, 0, 255)),
+            round(map(C[0] + random(-j - K, j + K), minR - O, maxR + O, 0, 255)),
+            round(map(C[1] + random(-j - K, j + K), minG - O, maxG + O, 0, 255)),
+            round(map(C[2] + random(-j - K, j + K), minB - O, maxB + O, 0, 255)),
             //round(map(L, 0, rst / rad, 0, 255))
         );
         point(X + 0, Y + 0);
