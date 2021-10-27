@@ -10,6 +10,7 @@ function preload() {
 }
 
 function setup() {
+    // pixelDensity(1);
     image(img, 0, 0);
     canvas = createCanvas(W, H);
     X = random(0, width);
@@ -66,6 +67,7 @@ function draw() {
         if (Y < 0) { Y = height + Y; }
 
         C = get(X, Y);
+        T = C[0] + C[1] + C[2];
         minR = min(C[0], minR + 0.0001);
         maxR = max(C[0], maxR - 0.0001);
         minG = min(C[1], minG + 0.0001);
