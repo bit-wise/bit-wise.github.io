@@ -4,7 +4,7 @@ const W = 1920 * 2;
 const H = W * (3 / 4);
 const range = Math.min(W, H);
 const inc = 0.01;
-const rad = W / 50;
+const rad = 50;
 const rst = Math.round(rad / inc);
 const M = 1024;
 let canvas, img, X, Y, C, J, nR, xR, nG, xG, nB, xB, SW, R;
@@ -34,7 +34,7 @@ function draw() {
     I++;
     nR = 128; xR = 128; nG = 128; xG = 128; nB = 128; xB = 128;
 
-    SW = rad / (L * inc + 1);
+    SW = map(rad / (L * inc + 1), rad, 1, rad * 5, 1);
     J = map(L, 0, rst, 0, 10);
     R = random(-J, J);
     xyMap = [];
