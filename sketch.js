@@ -8,12 +8,7 @@ const rad = 75;
 const rst = Math.round(rad / inc);
 const M = 1024;
 let canvas, img, X, Y, C, J, nR, xR, nG, xG, nB, xB, SW, R;
-let pI = 0;
-let I = 0;
-let L = 0;
-let prt = false;
-let xyMap = [];
-let pxMap = [];
+let pI = 0; let rI = 0; let I = 0; let L = 0; let prt = false; let xyMap = []; let pxMap = []; let rMap = [];
 
 function preload() {
     img = loadImage(inp);
@@ -21,10 +16,13 @@ function preload() {
 
 function setup() {
     pixelDensity(1);
+    frameRate(15);
     image(img, 0, 0);
     canvas = createCanvas(W, H);
     for (let x = 0; x < W; x++) { for (let y = 0; y < H; y++) { pxMap.push({ x, y }); } }
     pxMap = shuffle(pxMap);
+    for (let i = 0; i < W; i++) { rMap.push(random(-1, 1)); }
+    rMap = shuffle(rMap);
     X = pxMap[0].x;
     Y = pxMap[0].y;
 }
@@ -40,12 +38,12 @@ function draw() {
 
     SW = map(rad / (L * inc + 1), rad, 1, 250, 1);
     J = map(L, 0, rst, 0, 4);
-    R = random(-J, J);
+    rI++; if (rI >= rMap.length) { rI = 0; }
+    R = rMap[rI] * J;
     xyMap = [];
 
     for (let i = 0; i < M; i++) {
-        pI++;
-        if (pI >= pxMap.length) { pI = 0; }
+        pI++; if (pI >= pxMap.length) { pI = 0; }
         X = pxMap[pI].x;
         Y = pxMap[pI].y;
 
