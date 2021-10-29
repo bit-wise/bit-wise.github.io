@@ -1,13 +1,13 @@
 const inp = 'sample3.jpg';
 const outp = ['living.color', 'jpg'];
-const W = 1920 * 2;
+const W = 1920 * 2; const W4 = W/4;
 const H = W * (3 / 4);
 const range = Math.min(W, H);
 const inc = 0.01;
 const rad = 75;
 const rst = Math.round(rad / inc);
 let canvas, img, X, Y, C, J, nR, xR, nG, xG, nB, xB, SW, R;
-let M = 500; pI = 0; let rI = 0; let I = 0; let L = 0; let prt = false; let xyMap = []; let pxMap = []; let rMap = [];
+let M = W4/2; pI = 0; let rI = 0; let I = 0; let L = 0; let prt = false; let xyMap = []; let pxMap = []; let rMap = [];
 
 function preload() {
     img = loadImage(inp);
@@ -40,7 +40,7 @@ function draw() {
     R = rMap[rI] * J;
     xyMap = [];
 
-    if (frameRate() > 30) { M++ } else { M-- }
+    if (frameRate() > 24 && M < W4) { M++ } else { M-- }
     for (let i = 0; i < M; i++) {
         pI++; if (pI >= pxMap.length) { pI = 0; }
         X = pxMap[pI].x;
