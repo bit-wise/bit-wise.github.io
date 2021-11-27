@@ -1,7 +1,7 @@
 const outp = ['living.color', 'jpg'];
 const rst = 10000;
 const fac = 5;
-const W = window.innerWidth * 1; const W4 = W / 4; const H = window.innerHeight * 1; const os = 1; const sw = Math.pow(fac, 2); const Wos = (W - os * 2) / fac; const Hos = (H - os * 2) / fac;
+const W = 1920 * 1; const W4 = W / 4; const H = W * (3 / 4); const os = 1; const sw = Math.pow(fac, 2); const Wos = (W - os * 2) / fac; const Hos = (H - os * 2) / fac;
 let canvas, img, C, P; let M = W4 / 2; let I = 0; let E = 0; let MR = 10000; let prt = false; let xyMap = []; pI = 0; let pxMap = [];
 function setup() {
     pixelDensity(2);
