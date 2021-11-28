@@ -1,7 +1,7 @@
 const outp = ['living.color', 'jpg'];
 const fac = 1;
 const W = 1920 * 1; const H = W * (3 / 4); const WM = W * 1.50; const os = 1; const Wos = (W - os * 2) / fac; const Hos = (H - os * 2) / fac;
-let canvas, img, C, P, pos, Cc; let F = 4; let Ca = [[F, -F], [0, -F], [-F, -F], [F, 0], [-F, 0], [F, F], [0, F], [-F, F]]; let M = WM; let I = 0; let E = 0; let prt = false; let xyMap = []; pI = 0; let pxMap = [];
+let canvas, img, C, P, pos, Cc; let F = fac * 2; let Ca = [[F, -F], [0, -F], [-F, -F], [F, 0], [-F, 0], [F, F], [0, F], [-F, F]]; let M = WM; let I = 0; let E = 0; let prt = false; let xyMap = []; pI = 0; let pxMap = [];
 function setup() {
     pixelDensity(2);
     canvas = createCanvas(W, H);
@@ -24,7 +24,10 @@ function rend() {
     xyMap.map(m => { strokeWeight(m.w); stroke(m.r, m.g, m.b); point(m.x, m.y); });
 }
 function grow(C, P) {
-    pos = 0; if (P.x < 0 || P.x > W || P.y < 0 || P.y > H) { return pos; }
-    Ca.map(c => { Cc = get(P.x + c[0], P.y + c[1]); if (Cc[0] == C[0] && Cc[1] == C[1] && Cc[2] == C[2]) { pos += 1; } });
+    pos = 0;
+    Ca.map(c => {
+        if (P.x + c[0] < 0 || P.x + c[0] > W || P.y + c[1] < 0 || P.y + c[1] > H) { return false; }
+        Cc = get(P.x + c[0], P.y + c[1]); if (Cc[0] == C[0] && Cc[1] == C[1] && Cc[2] == C[2]) { pos += 1; } 
+    });
     return pos;
 }
