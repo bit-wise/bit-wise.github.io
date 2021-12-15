@@ -2,7 +2,7 @@ const W = window.innerWidth;
 const H = window.innerHeight;
 const W1 = W - 1;
 const H1 = H - 1;
-const MX = Math.max(W,H);
+const M = Math.min(W,H);
 let O = 0; // orientation
 let I = 0;
 
@@ -51,11 +51,12 @@ function draw() {
       }
     }
   }
-  L.map((l) => {
+  L.map((l,i) => {
+    stroke(map(i,0,L.length,255,0));
     point(l[0], l[1]);
   });
   O = (O + 1) % 4;
-  if (I++ > MX) {
+  if (I++ > M) {
     noLoop();
   }
 }
