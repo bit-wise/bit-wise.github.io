@@ -11,7 +11,7 @@ let TB = [];
 let BT = [];
 
 function setup() {
-  frameRate(3);
+  // frameRate(3);
   pixelDensity(2);
   createCanvas(W, H);
   background(255);
