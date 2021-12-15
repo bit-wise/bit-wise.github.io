@@ -12,18 +12,26 @@ body{
     right: 0;
 }
 container{
-    max-width: 60em;
+    // max-width: 60em;
     margin: auto;
     padding: 0 2em;
     position: relative;
     bottom: 0;
     top: 0;
+    left: 0;
+    right: 0;
     height: 100%;
 }
 header, content, footer{
-    padding: 1rem;
+    padding: 1rem 25%;
+}
+header,footer{
+    background:#333;
+    color:#e0e8ef;
 }
 footer{
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
 }
