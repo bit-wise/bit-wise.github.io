@@ -2,16 +2,24 @@ const W = window.innerWidth;
 const H = window.innerHeight;
 const W1 = W - 1;
 const H1 = H - 1;
-const M = Math.min(W,H);
+const M = Math.min(W, H);
 let O = 0; // orientation
 let I = 0;
+let LR = [];
+let RL = [];
+let TB = [];
+let BT = [];
 
 function setup() {
+  frameRate(3);
   pixelDensity(2);
   createCanvas(W, H);
   background(255);
   strokeWeight(1);
-  frameRate(3);
+  for (let i = 0; i < W1; i++) { LR.push(i); }
+  for (let i = W1; i > 0; i--) { RL.push(i); }
+  for (let i = 0; i < H1; i++) { TB.push(i); }
+  for (let i = H1; i > 0; i--) { BT.push(i); }
 }
 
 function draw() {
@@ -20,43 +28,21 @@ function draw() {
   let L = [];
   if (O % 2 == 0) {
     if (O == 0) {
-      for (let i = 0; i < W1; i++) {
-        B = get(i, S)[0] < 255 ? !B : B;
-        if (!B) {
-          L.push([i, S]);
-        }
-      }
+      LR.map((d) => { B = get(d, S)[0] < 255 ? !B : B; if (!B) { L.push([d, S]); } });
     } else {
-      for (let i = W1; i > 0; i--) {
-        B = get(i, S)[0] < 255 ? !B : B;
-        if (!B) {
-          L.push([i, S]);
-        }
-      }
+      RL.map((d) => { B = get(d, S)[0] < 255 ? !B : B; if (!B) { L.push([d, S]); } });
     }
   } else {
     if (O == 1) {
-      for (let i = 0; i < H1; i++) {
-        B = get(S, i)[0] < 255 ? !B : B;
-        if (!B) {
-          L.push([S, i]);
-        }
-      }
+      TB.map((d) => { B = get(S, d)[0] < 255 ? !B : B; if (!B) { L.push([S, d]); } });
     } else {
-      for (let i = H1; i > 0; i--) {
-        B = get(S, i)[0] < 255 ? !B : B;
-        if (!B) {
-          L.push([S, i]);
-        }
-      }
+      BT.map((d) => { B = get(S, d)[0] < 255 ? !B : B; if (!B) { L.push([S, d]); } });
     }
   }
-  L.map((l,i) => {
-    stroke(map(i,0,L.length,255,0));
+  L.map((l, i) => {
+    stroke(map(i, 0, L.length, 0, 255));
     point(l[0], l[1]);
   });
   O = (O + 1) % 4;
-  if (I++ > M) {
-    noLoop();
-  }
+  if (I++ > M) { noLoop(); }
 }
