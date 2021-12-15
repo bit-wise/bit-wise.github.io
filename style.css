@@ -4,12 +4,26 @@
     box-sizing: border-box;
     display: block;
 }
+body{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 container{
     max-width: 60em;
     margin: auto;
-    padding: 2em;
+    padding: 0 2em;
     position: relative;
+    bottom: 0;
+    top: 0;
+    height: 100%;
 }
 header, content, footer{
     padding: 1rem;
+}
+footer{
+    position: absolute;
+    bottom: 0;
 }
