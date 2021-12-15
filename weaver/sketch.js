@@ -2,7 +2,7 @@ const W = window.innerWidth;
 const H = window.innerHeight;
 const W1 = W - 1;
 const H1 = H - 1;
-const H2 = H / 2;
+const MX = Math.max(W,H);
 let O = 0; // orientation
 let I = 0;
 
@@ -21,14 +21,14 @@ function draw() {
   if (O % 2 == 0) {
     if (O == 0) {
       for (let i = 0; i < W1; i++) {
-        B = get(i, S)[0] < 128 ? !B : B;
+        B = get(i, S)[0] < 255 ? !B : B;
         if (!B) {
           L.push([i, S]);
         }
       }
     } else {
       for (let i = W1; i > 0; i--) {
-        B = get(i, S)[0] < 128 ? !B : B;
+        B = get(i, S)[0] < 255 ? !B : B;
         if (!B) {
           L.push([i, S]);
         }
@@ -37,14 +37,14 @@ function draw() {
   } else {
     if (O == 1) {
       for (let i = 0; i < H1; i++) {
-        B = get(S, i)[0] < 128 ? !B : B;
+        B = get(S, i)[0] < 255 ? !B : B;
         if (!B) {
           L.push([S, i]);
         }
       }
     } else {
       for (let i = H1; i > 0; i--) {
-        B = get(S, i)[0] < 128 ? !B : B;
+        B = get(S, i)[0] < 255 ? !B : B;
         if (!B) {
           L.push([S, i]);
         }
@@ -55,7 +55,7 @@ function draw() {
     point(l[0], l[1]);
   });
   O = (O + 1) % 4;
-  if (I++ > H2) {
+  if (I++ > MX) {
     noLoop();
   }
 }
