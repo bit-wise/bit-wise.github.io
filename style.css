@@ -13,9 +13,7 @@ body{
     right: 0;
 }
 container{
-    // max-width: 60em;
     margin: auto;
-    padding: 0 2em;
     position: relative;
     bottom: 0;
     top: 0;
