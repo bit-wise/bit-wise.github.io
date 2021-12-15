@@ -16,10 +16,10 @@ function setup() {
   createCanvas(W, H);
   background(255);
   strokeWeight(1);
-  for (let i = 0; i < W1; i++) { LR.push(i); }
-  for (let i = W1; i > 0; i--) { RL.push(i); }
-  for (let i = 0; i < H1; i++) { TB.push(i); }
-  for (let i = H1; i > 0; i--) { BT.push(i); }
+  for (let i = 1; i < W1; i++) { LR.push(i); }
+  for (let i = W1; i > 1; i--) { RL.push(i); }
+  for (let i = 1; i < H1; i++) { TB.push(i); }
+  for (let i = H1; i > 1; i--) { BT.push(i); }
 }
 
 function draw() {
