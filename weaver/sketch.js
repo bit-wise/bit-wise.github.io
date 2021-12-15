@@ -11,7 +11,7 @@ function setup() {
   createCanvas(W, H);
   background(255);
   strokeWeight(1);
-  // frameRate(2);
+  frameRate(3);
 }
 
 function draw() {
