@@ -10,12 +10,14 @@ canvas {
   display: block;
 }
 snippet {
-  background: #ffffffdd;
+  background: #ca2b4bdd;
   position: absolute;
   bottom: 3em;
   right: 4em;
   width: 25em;
   padding: 2.5em 2.4em 5em;
+  color: #fff;
+  box-shadow: 0 2em #ffffffbb
 }
 snippet h1{
   margin: 0;
