@@ -21,7 +21,7 @@ container{
     left: 0;
     right: 0;
     height: 100%;
-    background: rgba(0,255,0,0.3);
+    background: rgb(0 0 0 / 80%);
 }
 main{
     position: absolute;
@@ -42,6 +42,7 @@ header, content {
     bottom: 3em;
     width: 50%;
     max-width: 40em;
+    border: 20px solid #ffffff14;
 }
 header,footer{
     background: #000000;
@@ -53,14 +54,14 @@ header {
     left: auto;
     height: 40rem;
     width: 40rem;
-    background: #5a2371b0;
+    background: #846d39;
     box-shadow: 25em 5em 0 #ff000096;
 }
 content {
     right: auto;
     left: 49%;
     padding: 4em;
-    background: #ffd60ac7;
+    background: #000000c7;
 }
 content div{
     position: absolute;
@@ -85,7 +86,7 @@ h1 {
     transform: translate(-50%,-50%);
 }
 a {
-    color: #000;
+    color: #fff;
 }
 h1 span{
     font-size: 1rem;
@@ -96,4 +97,6 @@ h2{
 }
 p {
     padding: 1em 1em 2em;
+    color: #fff;
+    font-weight: 100;
 }
