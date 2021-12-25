@@ -3,19 +3,19 @@ html, body {
   padding: 0;
   font-family: helvetica, snas-serif;
   font-weight: 100;
-  line-height: 1.3em;
+  line-height: 1.6em;
   font-size: 0.8em;
 }
 canvas {
   display: block;
 }
 snippet {
-  background: #ffffffc2;
+  background: #ffffffdd;
   position: absolute;
   bottom: 3em;
   right: 4em;
-  width: 20em;
-  padding: 2em 2.3em;
+  width: 25em;
+  padding: 2.5em 2.4em 5em;
 }
 snippet h1{
   margin: 0;
