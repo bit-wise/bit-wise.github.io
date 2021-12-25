@@ -8,6 +8,9 @@
 body,h1,h2,p,a{
     color: #eee;
 }
+a,p {
+    color: #000;
+}
 body{
     position: absolute;
     top: 0;
@@ -55,14 +58,14 @@ header {
     left: auto;
     height: 40rem;
     width: 40rem;
-    background: #846d39bb;
-    box-shadow: 25em 5em 0em #b68d40bb;
+    background: #ca2b4bbb;
+    box-shadow: 25em 5em 0em #ffffffcc;
 }
 content {
     right: auto;
     left: 49%;
     padding: 4em;
-    background: #122620bb;
+    background: #ffa384bb;
 }
 content div{
     position: absolute;
@@ -98,4 +101,6 @@ h2{
 p {
     padding: 1em 1em 2em;
     font-weight: 100;
+    line-height: 1.7em;
+    font-size: 0.8em;
 }
