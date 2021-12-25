@@ -47,6 +47,7 @@ content {
     right: auto;
     left: 50%;
     padding: 4em;
+    background: #fff;
 }
 footer{
     position: absolute;
@@ -59,12 +60,13 @@ footer{
 }
 h1 {
     position: absolute;
-    bottom: 40%;
-    left: 13%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 a {
-    color: #fff;
+    color: #000;
 }
 h1 span{
     font-size: 1rem;
