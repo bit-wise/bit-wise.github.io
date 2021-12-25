@@ -23,6 +23,13 @@ container{
     height: 100%;
     background: rgba(0,255,0,0.3);
 }
+main{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 header, content, footer{
     padding: 1rem;
     display: block;
