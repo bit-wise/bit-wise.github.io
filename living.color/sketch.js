@@ -6,7 +6,6 @@ let ps = window.intro || 20;
 let R = 25;
 let xy = [];
 let xyi = 0;
-let I = 0;
 
 function setup() {
   randSet(W * H);
