@@ -1,0 +1,1 @@
+window.intro = 50;
