@@ -55,12 +55,12 @@ header,footer{
 header {
     right: 49%;
     top: 5em;
+    bottom: 5em;
     left: auto;
-    height: 40rem;
     width: 40rem;
     background: transparent;
-    box-shadow: 2em 5em 0em #ffa2b4;
-    /* border-radius: 0 0 2em; */
+    box-shadow: 2em 0em 0em #ffa384;
+    transform: rotate(-90deg);
 }
 content {
     right: auto;
@@ -89,6 +89,7 @@ h1 {
     top: 50%;
     left: 45%;
     transform: translate(-50%,-50%);
+    font-size: 8.25em;
 }
 a {
 }
