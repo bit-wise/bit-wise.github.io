@@ -22,7 +22,7 @@ function draw() {
     let ix = xy[xyi].x * ps;
     let iy = xy[xyi].y * ps;
     let c = get(ix, iy);
-    stroke(c[3] < 1 || rand(1000) < 1 ? [round(rand(2) * 128), round(rand(2) * 128), round(rand(2) * 128), 256,] : c);
+    stroke(c[3] < 1 || rand(1000) < 1 ? [rrand(2) * 128, rrand(2) * 128, rrand(2) * 128, 256,] : c);
     if (floor(rand(8)) == 0) { line(ix, iy, ix + ps, iy); } else
       if (floor(rand(8)) == 1) { line(ix, iy, ix, iy + ps); } else
         if (floor(rand(8)) == 2) { line(ix, iy, ix - ps, iy); } else

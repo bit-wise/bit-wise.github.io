@@ -42,7 +42,7 @@ function draw() {
       BT.map((d) => { B = get(S, d)[3] > 0 ? !B : B; if (!B) { L.push([S, d]); } });
     }
   }
-  stroke(random(0, 3) * 64 + 64, random(0, 3) * 64 + 64, random(0, 3) * 64 + 64,);
+  stroke([rrand(2) * 128, rrand(2) * 128, rrand(2) * 128, 256,]);
   L.map((l, i) => {
     point(l[0], l[1]);
   });
