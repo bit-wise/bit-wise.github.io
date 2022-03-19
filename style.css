@@ -17,7 +17,6 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
-    background: #000;
 }
 container{
     margin: auto;
@@ -59,14 +58,13 @@ header {
     left: auto;
     width: 40rem;
     background: transparent;
-    box-shadow: 2em 0em 0em #ffa384;
     transform: rotate(-90deg);
 }
 content {
     right: auto;
     left: 49%;
     padding: 4em;
-    background: #ca2b4bcc;
+    background: #00000044;
 }
 content div{
     position: absolute;
