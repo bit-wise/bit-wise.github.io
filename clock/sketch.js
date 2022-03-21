@@ -39,25 +39,6 @@ function draw() {
   d.mnt = Math.floor(d.org / m_n);
   d.yer = Math.floor(d.org / m_y);
   rng.I = d.min;
-  // push();
-  // fill(200);
-  // noStroke();
-  // rect(W/2, 0, W, H);
-  // pop();
-  // push();
-  // fill(0)
-  // text(
-  //   d.org + '\n' +
-  //   d.mil + '\n' +
-  //   d.sec + ' ('+(d.mil % m_s)+')\n' +
-  //   d.min + ' ('+(d.mil % m_m)+')\n' +
-  //   d.hor + ' ('+(d.mil % m_h)+')\n' +
-  //   d.day + ' ('+(d.mil % m_d)+')\n' +
-  //   d.wek + ' ('+(d.mil % m_w)+')\n' +
-  //   d.mnt + ' ('+(d.mil % m_n)+')\n' +
-  //   d.yer + ' ('+(d.mil % m_y)+')\n' +
-  //   rng.I, W-10, 10);
-  // pop();
   push();
   fill(200);
   noStroke();
@@ -74,12 +55,12 @@ function draw() {
   arc(pad4 * 1 + pad8 * 0, H - pad4, pad4, pad4, 0, TWO_PI);
   stroke(0);
   fill(0);
-  arc(pad4 * 6 + pad8 * 5,H - pad4,pad4,pad4,-0,((d.org % m_m) / m_m) * (TWO_PI * 1) - 0);
-  arc(pad4 * 5 + pad8 * 4,H - pad4,pad4,pad4,-0,((d.org % m_h) / m_h) * (TWO_PI * 1) - 0);
-  arc(pad4 * 4 + pad8 * 3,H - pad4,pad4,pad4,-0,((d.org % m_d) / m_d) * (TWO_PI * 1) - 0);
-  arc(pad4 * 3 + pad8 * 2,H - pad4,pad4,pad4,-0,((d.org % m_w) / m_w) * (TWO_PI * 1) - 0);
-  arc(pad4 * 2 + pad8 * 1,H - pad4,pad4,pad4,-0,((d.org % m_n) / m_n) * (TWO_PI * 1) - 0);
-  arc(pad4 * 1 + pad8 * 0,H - pad4,pad4,pad4,-0,((d.org % m_y) / m_y) * (TWO_PI * 1) - 0);
+  arc(pad4 * 6 + pad8 * 5,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_m) / m_m) * (TWO_PI * 1) - HALF_PI);
+  arc(pad4 * 5 + pad8 * 4,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_h) / m_h) * (TWO_PI * 1) - HALF_PI);
+  arc(pad4 * 4 + pad8 * 3,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_d) / m_d) * (TWO_PI * 1) - HALF_PI);
+  arc(pad4 * 3 + pad8 * 2,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_w) / m_w) * (TWO_PI * 1) - HALF_PI);
+  arc(pad4 * 2 + pad8 * 1,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_n) / m_n) * (TWO_PI * 1) - HALF_PI);
+  arc(pad4 * 1 + pad8 * 0,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_y) / m_y) * (TWO_PI * 1) - HALF_PI);
   pop();
   for (let i = 0; i < bch; i++) {
     stroke(0, 0, 0, 8);
@@ -108,8 +89,6 @@ rng = {
     if (s) {
       this.I++;
     }
-    // this.GN = this.fib(this.GN + this.I) % 1;
-    // this.I = this.I % 1000000;
     this.GN = this.fib(this.GN + this.I) % 1;
     return this.GN;
   },
