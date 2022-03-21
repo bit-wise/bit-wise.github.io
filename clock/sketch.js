@@ -29,33 +29,33 @@ function setup() {
 }
 
 function draw() {
+  d.org = Date.now();
+  d.mil = Math.floor(d.org);
+  d.sec = Math.floor(d.org / m_s);
+  d.min = Math.floor(d.org / m_m);
+  d.hor = Math.floor(d.org / m_h);
+  d.day = Math.floor(d.org / m_d);
+  d.wek = Math.floor(d.org / m_w);
+  d.mnt = Math.floor(d.org / m_n);
+  d.yer = Math.floor(d.org / m_y);
+  rng.I = d.min;
   // push();
   // fill(200);
   // noStroke();
   // rect(W/2, 0, W, H);
   // pop();
-  d.org = Date.now();
-  d.mil = Math.round(d.org);
-  d.sec = Math.round(d.org / m_s);
-  d.min = Math.round(d.org / m_m);
-  d.hor = Math.round(d.org / m_h);
-  d.day = Math.round(d.org / m_d);
-  d.wek = Math.round(d.org / m_w);
-  d.mnt = Math.round(d.org / m_n);
-  d.yer = Math.round(d.org / m_y);
-  rng.I = d.min;
   // push();
   // fill(0)
   // text(
   //   d.org + '\n' +
-  //   d.mil + ' ('+(d.mil % m_s)+')\n' +
-  //   d.sec + ' ('+(d.mil % m_m)+')\n' +
-  //   d.min + ' ('+(d.mil % m_h)+')\n' +
-  //   d.hor + ' ('+(d.mil % m_d)+')\n' +
-  //   d.day + ' ('+(d.mil % m_w)+')\n' +
-  //   d.wek + ' ('+(d.mil % m_n)+')\n' +
-  //   d.mnt + ' ('+(d.mil % m_y)+')\n' +
-  //   d.yer + '\n' +
+  //   d.mil + '\n' +
+  //   d.sec + ' ('+(d.mil % m_s)+')\n' +
+  //   d.min + ' ('+(d.mil % m_m)+')\n' +
+  //   d.hor + ' ('+(d.mil % m_h)+')\n' +
+  //   d.day + ' ('+(d.mil % m_d)+')\n' +
+  //   d.wek + ' ('+(d.mil % m_w)+')\n' +
+  //   d.mnt + ' ('+(d.mil % m_n)+')\n' +
+  //   d.yer + ' ('+(d.mil % m_y)+')\n' +
   //   rng.I, W-10, 10);
   // pop();
   push();
@@ -74,12 +74,12 @@ function draw() {
   arc(pad4 * 1 + pad8 * 0, H - pad4, pad4, pad4, 0, TWO_PI);
   stroke(0);
   fill(0);
-  arc(pad4 * 6 + pad8 * 5,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_m) / m_m) * (TWO_PI * 2) - HALF_PI);
-  arc(pad4 * 5 + pad8 * 4,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_h) / m_h) * (TWO_PI * 2) - HALF_PI);
-  arc(pad4 * 4 + pad8 * 3,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_d) / m_d) * (TWO_PI * 2) - HALF_PI);
-  arc(pad4 * 3 + pad8 * 2,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_w) / m_w) * (TWO_PI * 2) - HALF_PI);
-  arc(pad4 * 2 + pad8 * 1,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_n) / m_n) * (TWO_PI * 2) - HALF_PI);
-  arc(pad4 * 1 + pad8 * 0,H - pad4,pad4,pad4,-HALF_PI,((d.org % m_y) / m_y) * (TWO_PI * 2) - HALF_PI);
+  arc(pad4 * 6 + pad8 * 5,H - pad4,pad4,pad4,-0,((d.org % m_m) / m_m) * (TWO_PI * 1) - 0);
+  arc(pad4 * 5 + pad8 * 4,H - pad4,pad4,pad4,-0,((d.org % m_h) / m_h) * (TWO_PI * 1) - 0);
+  arc(pad4 * 4 + pad8 * 3,H - pad4,pad4,pad4,-0,((d.org % m_d) / m_d) * (TWO_PI * 1) - 0);
+  arc(pad4 * 3 + pad8 * 2,H - pad4,pad4,pad4,-0,((d.org % m_w) / m_w) * (TWO_PI * 1) - 0);
+  arc(pad4 * 2 + pad8 * 1,H - pad4,pad4,pad4,-0,((d.org % m_n) / m_n) * (TWO_PI * 1) - 0);
+  arc(pad4 * 1 + pad8 * 0,H - pad4,pad4,pad4,-0,((d.org % m_y) / m_y) * (TWO_PI * 1) - 0);
   pop();
   for (let i = 0; i < bch; i++) {
     stroke(0, 0, 0, 8);
@@ -95,24 +95,6 @@ function draw() {
       background(200);
     }
   }
-  // push();
-  // fill(0, 0, 0, 128);
-  // text(
-  //   Math.round(d / m_y) +
-  //     "." +
-  //     Math.round(d / m_n) +
-  //     "." +
-  //     Math.round(d / m_w) +
-  //     "." +
-  //     Math.round(d / m_d) +
-  //     "." +
-  //     Math.round(d / m_h) +
-  //     "." +
-  //     Math.round(d / m_m),
-  //   W - pad4,
-  //   H - pad4
-  // );
-  // pop();
 }
 
 rng = {
